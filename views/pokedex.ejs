@@ -1,0 +1,65 @@
+<div class="container-fluid" id="pokedex">
+	<div class="row">
+		<div class="col-md-12">
+            <h3>
+                Buscar Pokemones
+            </h3>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				
+				<div class=" navbar-collapse" id="bs-example-navbar-collapse-1">
+					
+                    <form class="form-inline" action="/" method="POST" id="frmPokedex">
+                        <div>
+                            <input class="form-control mr-sm-2" type="text" id="name" name="name" v-model="txtname" maxlength="20"/> 
+                            <button class="btn btn-primary my-2 my-sm-0" type="button" v-on:click="BuscarAjax()">
+                                Buscar
+                            </button>
+                            
+                        </div>
+                        <label class="form-check-label">&nbsp;&nbsp;&nbsp;</label>Todos los tipos</label> &nbsp;&nbsp;&nbsp;<input type="checkbox" v-on:change="selectAll" v-model="allSelected" class="form-check">
+                    
+                    </form>
+                    
+                </div>
+                
+            </nav>
+            <div  style="background-color: #ecf0f1; padding: 0px 5px 0px 5px;">
+                
+                <div v-if="listipos.length > 0" v-for="chk in listipos" class="form-check form-check-inline" style="font-size: 11px;">
+                <input type="checkbox" v-model="chktipos" :value="chk"  ><label class="form-check-label">&nbsp;{{chk}}</label>
+            </div>
+            
+            </div>
+		<div class="jumbotron-fluid" style="background-color:#ecf0f1!important; padding: 5px;">
+            <p>
+                En esta sección ubica tu pokemon por nombre o tipo.
+            </p>
+	      </div>
+		</div>
+    </div>
+    
+	<div class="row">
+        <div v-if="loading" class="loader"></div>
+		<div class="col-md-3 item-poket" v-if="pokemons.length > 0" v-for="pokemon in pokemons" >
+           
+            <figure class="imgpoket">
+                <a :href="'/GetPokemon/'+pokemon.id">
+                
+                <img :src="'img/thumbnails/'+pokemon.id.toString().padStart(3,'0')+'.png'" alt=""  >
+            </a>
+            </figure>
+    
+        <p class="infopoket">
+            <dt class="numero" >{{pokemon.id}}</dt>
+            <dt class="nombre">{{pokemon.name.english}}</dt>
+            <div class="tipo cdrtip" v-for="tipo in pokemon.type" >
+                <span class="background-color-grass">{{tipo}}</span>
+            </div>  
+            
+        </p>
+    
+    </div>
+    <div v-if="pokemons.length == 0 && loading==false"><p>   No se encontraron resultados</p></div>
+
+	</div>
+</div>

@@ -1,0 +1,99 @@
+<div class="container-fluid" id="pokemon">
+
+	<div class="row">
+        <% if(data) {
+                       var img="";
+                       img=data.id.toString();
+                       img=img.padStart(3,'0')
+                       
+                    %>
+		<div class="col-md-6 div.item-poketview"  >
+        
+            <figure class="imgpoket">
+                <a href="javascript:;">
+                <img src="/img/images/<%- img %>.png" alt=""  >
+            </a>
+            </figure>
+    
+    </div>
+    
+    <div class="col-md-6 div.item-poketview" >
+        <dt class="numero" ><%= data.id %></dt>
+<dt class="nombre"><%= data.name.english %> </dt>
+<p>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry
+    </p>
+
+    <p class="infopoket">
+
+<table>
+    <tr>
+        <td><label for="price">PS: </label></td>
+        <td>
+        <input type="range" name="price" id="price" min="0" max="150" step="1" value="<%= data.base.HP %>">
+        <output class="price-output" for="price"><%= data.base.HP %></output>
+       </td>
+    </tr>
+    <tr>
+    <td><label for="price">Ataque: </label></td>
+    <td>
+    <input type="range" name="price" id="price" min="0" max="150" step="1" value="<%= data.base.Attack %>">
+    <output class="price-output" for="price"><%= data.base.Attack %></output>
+   </td>
+    </tr>
+    <tr>
+        <td><label for="price">Defensa: </label></td>
+        <td>
+        <input type="range" name="price" id="price" min="0" max="150" step="1" value="<%= data.base.Defense %>">
+        <output class="price-output" for="price"><%= data.base.Defense %></output>
+       </td>
+    </tr>
+    <tr>
+        <td><label for="price">Ataque Especial: </label></td>
+        <td>
+        <input type="range" name="price" id="price" min="0" max="150" step="1" value="<%= data.base.SpAttack %>">
+        <output class="price-output" for="price"><%= data.base.SpAttack %></output>
+       </td>
+    </tr>
+        <tr>
+            <td><label for="price">Defensa Especial: </label></td>
+            <td>
+            <input type="range" name="price" id="price" min="0" max="150" step="1" value="<%= data.base.SpDefense %>">
+            <output class="price-output" for="price"><%= data.base.SpDefense %></output>
+           </td>
+            </tr>
+            <tr>
+                <td><label for="price">Velocidad: </label></td>
+                <td>
+                <input type="range" name="price" id="price" min="0" max="150" step="1" value="<%= data.base.Speed %>">
+                <output class="price-output" for="price"><%= data.base.Speed %></output>
+               </td>
+                </tr>
+</table>
+<p>
+<div class="tipo cdrtip" >
+    <% if(data.type.length > 0) { %>
+        <% for(let tipo of data.type) { %>
+    <span class="background-color-grass"><%= tipo %></span>
+    <% }
+     } %>
+</div>  
+</p>    
+    </p>
+    
+</div>
+
+    <% } else { %>
+        <div>No data found</div>
+    <% }
+                 %>
+                 <p>
+                    <a class="btn btn-primary btn-large" href="/">Regresa al Panel</a>
+                </p>
+
+    </div>
+   
+</div>
+<style>
+    
+</style>

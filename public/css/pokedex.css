@@ -1,0 +1,103 @@
+div.item-poket{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    /*border:1px solid #cccccc;*/
+        }
+        .background-color-grass {
+        background: -webkit-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+        background: -ms-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+        background: -moz-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+        background: -o-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+        background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+        background-color: #9bcc50;
+        color: #212121;
+    
+        /*display: block;*/
+        font-family: "Flexo-Medium",arial,sans-serif;
+        border-radius: 3px;
+        line-height: 18px;
+        max-width: 100px;
+        margin: 0 1.5625% 0 0;
+        width: 38.4375%;
+        float: left;
+        text-transform: none;
+        font-size: 11px;
+        text-align: center;
+        
+    }
+    .cdrtip
+    {
+        
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    .imgpoket{
+        text-align: center;
+    }
+    .infopoket{
+        font-weight: 300;
+        font-size: 11px;
+    }
+    .infopoket .numero{
+        color:#949494; font-size: 11px;
+    }
+    .infopoket .nombre{
+        color: #333333; font-size: 16px;
+    }
+    .infopoket .tipo{
+        color: #555555; font-size: 13px;
+    }
+
+    div.item-poketview{
+        margin-bottom: 20px;
+            }
+            .background-color-grass {
+            background: -webkit-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+            background: -ms-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+            background: -moz-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+            background: -o-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+            background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+            background-color: #9bcc50;
+            color: #212121;
+        
+            /*display: block;*/
+            font-family: "Flexo-Medium",arial,sans-serif;
+            border-radius: 3px;
+            line-height: 18px;
+            max-width: 100px;
+            margin: 0 1.5625% 0 0;
+            width: 38.4375%;
+            float: left;
+            text-transform: none;
+            font-size: 11px;
+            text-align: center;
+        }
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  animation: spin 2s linear infinite;
+  position: relative;
+  left: 45%;
+  top:20px;
+}
+.cont-loader{
+width: 100px;
+text-align: center;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

@@ -1,0 +1,67 @@
+<div class="container-fluid" id="pokedex">
+	<div class="row">
+		<div class="col-md-12">
+            <h3>
+                Buscar Pokemones
+            </h3>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					
+					<form class="form-inline" action="/" method="POST" id="frmPokedex">
+						<input class="form-control mr-sm-2" type="text" id="name" name="name" value="<%= param.name %>"/> 
+						<button class="btn btn-primary my-2 my-sm-0" type="button" v-on:click="Buscar()">
+							Buscar
+						</button>
+					</form>
+					
+				</div>
+            </nav>
+		<div class="jumbotron-fluid" style="background-color:#ecf0f1!important; padding: 5px;">
+            <p>
+                En esta sección ubica tu pokemon por nombre o tipo.
+            </p>
+	      </div>
+		</div>
+    </div>
+    
+	<div class="row">
+        <% if(data) { %>
+            <% if(data.length > 0) { %>
+                <% for(let item of data) {
+                    var img="";
+                       img=item.id.toString();
+                       img=img.padStart(3,'0')
+                       
+                    %>
+		<div class="col-md-3 item-poket"  >
+        
+            <figure class="imgpoket">
+                <a href="/GetPokemon/<%- item.id %>">
+                <!--<img src="img/thumbnails/001.png" alt="" <%- img -%> >-->
+                <img src="img/thumbnails/<%- img %>.png" alt=""  >
+            </a>
+            </figure>
+    
+        <p class="infopoket">
+            <dt class="numero" ><%= item.id %></dt>
+            <dt class="nombre"><%= item.name.english %></dt>
+            <div class="tipo cdrtip" >
+                <% if(item.type.length > 0) { %>
+                    <% for(let tipo of item.type) { %>
+                <span class="background-color-grass"><%= tipo %></span>
+                <% }
+                 } %>
+            </div>  
+            
+        </p>
+    
+    </div>
+    <% } %>
+    <% } else { %>
+        <div>No data found</div>
+    <% }
+                 } %>
+
+	</div>
+</div>
